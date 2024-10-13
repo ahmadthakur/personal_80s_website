@@ -8,8 +8,8 @@ function randomizeScrapbook() {
         const left = Math.floor(Math.random() * 40) - 20; // Random number between -20 and 20
 
         // Randomize size values
-        const width = Math.floor(Math.random() * 200) + 200; // Random width between 300 and 500
-        const height = Math.floor(Math.random() * 200) + 200; // Random height between 300 and 500
+        const width = 300; // Random width between 300 and 500
+        const height = 300; // Random height between 300 and 500
         
         // Randomize rotation values
         const rotation = Math.floor(Math.random() * 20) - 10; // Random number between -10 and 10 degrees
@@ -20,7 +20,7 @@ function randomizeScrapbook() {
         item.style.left = `${left}px`;
         item.style.width = `${width}px`;
         item.style.height = `${height}px`;
-        // item.style.transform = `rotate(${rotation}deg)`;
+        item.style.transform = `rotate(${rotation}deg)`;
     });
 }
 

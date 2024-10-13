@@ -11,6 +11,14 @@ body {
   padding: 20px; /* Padding around the content */
 }
 
+#HOME_CONTAINER {
+  max-width: 800px; /* Limit the width for better reading */
+  max-height: 100vh;
+  /* Center the content */
+  margin: 0 auto;
+  overflow: hidden
+}
+
 header {
   margin-bottom: 20px; /* Spacing between content and header */
 }
@@ -35,9 +43,9 @@ footer {
 .container {
   display: grid; /* Use CSS Grid */
   grid-template-columns: 1fr 200px; /* Two columns: one flexible, one fixed */
-  height: 100vh; /* Full viewport height */
+  height: 100%; /* Full viewport height */
+  
 }
-
 .canvas-container {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -59,7 +67,7 @@ footer {
   padding: 0;
   margin: 0;
   display: flex; /* Display list items in a row */
-    justify-content: center; /* Center items horizontally */
+  justify-content: center; /* Center items horizontally */
 }
 
 #nav-container-2 li {
@@ -79,7 +87,7 @@ footer {
 }
 
 .about-me {
-  margin-top: 200px; /* Spacing between content and about me section */
+  margin-top: 100px; /* Spacing between content and about me section */
   margin-left: 100px;
   margin-right: 100px;
 }

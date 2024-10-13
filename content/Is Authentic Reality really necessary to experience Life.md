@@ -1,4 +1,6 @@
-13-10-2024
+# Is Authentic Reality really necessary to experience Life?
+
+*13-10-2024*
 
 The *brain in a vat* is a thought experiment that argues that we could be brains in a vat hooked to a computer and our entire perception of reality could just be a simulation. But why does it matter if our experiences are real or not as long as we are happy? The ancient Greeks emphasized the end goal of life to attain happiness, which is why they came up with philosophy, ethics and humanities, ways to make a human live a good and happy existence. If a simulation allows a person to *live* a good and happy existence would it really matter? 
 

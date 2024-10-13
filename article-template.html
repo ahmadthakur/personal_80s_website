@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Article</title>
+  <title>Thoughts</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+
+   <!--add a favicon-->
+    <link rel="icon" href="images/icons8-brain-48.png" type="image/x-icon" />
 </head>
 <body>
   <div id="SITE_CONTAINER">
@@ -24,7 +27,7 @@
     </header>
 
     <div class="article-content" id="article-content">
-      <h1 id="article-title">Article Name</h1>
+     
       <!-- Article content will be displayed here -->
     </div>
 
@@ -67,9 +70,7 @@
       const filename = params['filename'];
 
       if (filename) {
-        // Remove the .md extension and replace underscores with spaces for better formatting
-        const articleTitle = decodeURIComponent(filename).replace(/_/g, ' ').replace(/\.md$/, '');
-        document.getElementById("article-title").textContent = articleTitle; // Update the title
+        
         loadMarkdown(`content/${filename}`);
       } else {
         console.error("Filename query parameter is missing");

@@ -1,4 +1,6 @@
-11-10-2024
+# Why can't we just shun responsibility in the case of a moral dilemma?
+
+*11-10-2024*
 
 The trolley car problem presents us with the moral issue of weighing one life vs many. In the problem, a driver of a trolley car with failed brakes has the option to either let the trolley continue in its path and kill 5 workers on the tracks ahead, or he can divert the trolley on a side track where only one worker is present, and kill him to save the 5. This is a moral dilemma where a lot of people might use consequential reasoning to say taking one life is better than 5.
 
