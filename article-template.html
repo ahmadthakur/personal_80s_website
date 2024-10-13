@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+</head>
+<body>
+  <div id="SITE_CONTAINER">
+    <header>
+      <nav id="nav-container-2">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="thoughts.html">thoughts</a></li>
+          <li><a href="music.html">music</a></li>
+          <li><a href="pictures.html">pictures</a></li>
+          <li><a href="scrapbook.html">scrapbook</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="article-content" id="article-content">
+      <h1 id="article-title">Article Name</h1>
+      <!-- Article content will be displayed here -->
+    </div>
+
+    <footer></footer>
+  </div>
+
+  <script>
+    // Function to get query parameters
+    function getQueryParams() {
+      const params = {};
+      window.location.search.substring(1).split("&").forEach(param => {
+        const [key, value] = param.split("=");
+        params[key] = decodeURIComponent(value);
+      });
+      return params;
+    }
+
+    // Function to fetch and display Markdown content
+    async function loadMarkdown(file) {
+      try {
+        const response = await fetch(encodeURI(file));
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${file}`);
+        }
+        const markdown = await response.text();
+        // Convert Markdown to HTML using marked
+        const htmlContent = marked.parse(markdown); // Updated for the latest version
+        // Display the HTML content in the article-content div
+        document.getElementById("article-content").innerHTML += htmlContent; // Append content
+
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById("article-content").innerHTML = "<p>Failed to load content.</p>";
+      }
+    }
+
+    // Load the Markdown content when the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = getQueryParams();
+      const filename = params['filename'];
+
+      if (filename) {
+        // Remove the .md extension and replace underscores with spaces for better formatting
+        const articleTitle = decodeURIComponent(filename).replace(/_/g, ' ').replace(/\.md$/, '');
+        document.getElementById("article-title").textContent = articleTitle; // Update the title
+        loadMarkdown(`content/${filename}`);
+      } else {
+        console.error("Filename query parameter is missing");
+        document.getElementById("article-content").innerHTML = "<p>No article specified.</p>";
+      }
+    });
+  </script>
+</body>
+</html>

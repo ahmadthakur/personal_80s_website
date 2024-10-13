@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thoughts</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  </head>
+  <body>
+    <div id="SITE_CONTAINER">
+      <header>
+        <nav id="nav-container-2">
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="thoughts.html">thoughts</a></li>
+            <li><a href="music.html">music</a></li>
+            <li><a href="pictures.html">pictures</a></li>
+            <li><a href="scrapbook.html">scrapbook</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="thoughts">
+        <ul class="article-list" id="article-list">
+          <!-- Articles will be dynamically added here -->
+        </ul>
+      </div>
+      <div id="article-content">
+        <!-- Article content will be displayed here -->
+      </div>
+      <footer></footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Fetch articles from JSON file
+        fetch("articles.json")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((articles) => {
+            const articleList = document.getElementById("article-list");
+
+            if (articles.length === 0) {
+              articleList.innerHTML = "<li>No articles available.</li>";
+              return;
+            }
+
+            articles.forEach((article) => {
+              const listItem = document.createElement("li");
+              const link = document.createElement("a");
+              link.href = `article-template.html?filename=${encodeURIComponent(article.filename)}`;
+              link.textContent = article.title;
+              listItem.appendChild(link);
+              articleList.appendChild(listItem);
+            });
+          })
+          .catch((error) => console.error("Error fetching articles:", error));
+      });
+    </script>
+  </body>
+</html>
