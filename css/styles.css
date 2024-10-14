@@ -13,7 +13,7 @@ body {
 
 #HOME_CONTAINER {
   max-width: 800px; /* Limit the width for better reading */
-  max-height: 100vh;
+  max-height: 100%;
   /* Center the content */
   margin: 0 auto;
   overflow: hidden
@@ -159,4 +159,8 @@ iframe {
   margin-top: 100px;
   font-size: 17px;
   line-height: 31px;
+}
+
+.article-list li{
+  margin-bottom: 20px;
 }
