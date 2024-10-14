@@ -15,6 +15,12 @@
       "alt": "Ace Combat 7: Skies Unknown"
     },
     {
+      "quote": true,
+      "src": "../images/babel_book_quote.png",
+      "alt": "A quote from the book Babel by R.F. Kuang"
+    
+    },
+    {
       "href": "https://www.goodreads.com/book/show/57945316-babell",
       "src": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1677361825i/57945316.jpg",
       "alt": "Babel: Or the neceessity of violence by R.F. Kuang"
@@ -22,8 +28,8 @@
     {
       "iframe": true,
       "src": "https://www.youtube.com/embed/UvYcunuF3Eo",
-      "width": "320",
-      "height": "180"
+      "width": "480",
+      "height": "270"
     },
     {
       "href": "https://www.viki.com/tv/38384c-why-i-dress-up-for-love",

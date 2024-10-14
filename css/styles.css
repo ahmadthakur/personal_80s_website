@@ -16,7 +16,7 @@ body {
   max-height: 100%;
   /* Center the content */
   margin: 0 auto;
-  overflow: hidden
+  overflow: hidden;
 }
 
 header {
@@ -44,7 +44,6 @@ footer {
   display: grid; /* Use CSS Grid */
   grid-template-columns: 1fr 200px; /* Two columns: one flexible, one fixed */
   height: 100%; /* Full viewport height */
-  
 }
 .canvas-container {
   justify-content: center; /* Center horizontally */
@@ -119,13 +118,17 @@ footer {
 
 .scrapbook-grid a {
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .scrapbook-text {
+  display: inline-block;
   margin-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
+  background-color: black;
+  padding: 0 20px;
+  color: white;
 }
 
 .scrapbook-grid img {
@@ -133,6 +136,8 @@ footer {
   height: auto;
   display: block;
 }
+
+
 
 iframe {
   z-index: 1;
@@ -143,7 +148,7 @@ iframe {
 }
 
 .scrapbook-body {
-  background-image: url("https://www.nasa.gov/wp-content/uploads/2024/10/iss072e020907orig.jpg");
+  background-image: url("https://singularityhub.com/wp-content/uploads/2021/01/hubble-xtreme-deep-field-galaxies-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -161,7 +166,7 @@ iframe {
   line-height: 31px;
 }
 
-.article-list li{
+.article-list li {
   margin-bottom: 20px;
 }
 
@@ -169,11 +174,9 @@ iframe {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  
 }
 
 .books p {
-
   margin-bottom: 20px;
 }
 
@@ -187,7 +190,6 @@ iframe {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
-
 }
 
 .book-list li:last-child {

@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           element = document.createElement("a");
           element.title = item.alt;
-          element.href = item.href;
+          if (item.href) {
+            element.href = item.href;
+            element.target = "_blank";
+          }
           element.target = "_blank";
           element.className = "scrapbook-item";
           const img = document.createElement("img");
@@ -44,9 +47,9 @@ function randomizeScrapbook() {
     const top = Math.floor(Math.random() * 40) - 20; // Random number between -20 and 20
     const left = Math.floor(Math.random() * 40) - 20; // Random number between -20 and 20
 
-    // Randomize size values
-    const width = 300; // Random width between 300 and 500
-    const height = 300; // Random height between 300 and 500
+    // Size values
+    const width = 400; //
+    const height = 400; //
 
     // Randomize rotation values
     const rotation = Math.floor(Math.random() * 20) - 10; // Random number between -10 and 10 degrees
@@ -55,9 +58,14 @@ function randomizeScrapbook() {
     item.style.position = "relative";
     item.style.top = `${top}px`;
     item.style.left = `${left}px`;
+
     item.style.width = `${width}px`;
-    item.style.height = `${height}px`;
-    item.style.transform = `rotate(${rotation}deg)`;
+
+    if (item.quote) {
+      const currentWidth = parseFloat(item.style.width);
+      item.style.width = `${currentWidth * 2}px`;
+     
+    }
   });
 }
 
