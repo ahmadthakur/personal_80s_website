@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
             bookCover.src = coverImage;
             bookCover.alt = `${title} cover`;
+            bookCover.loading = "lazy"; // Lazy load images
   
             bookInfo.innerHTML = `<strong>${title}</strong> by ${author}<br><em>Read on: ${formattedDate}</em>`;
   
@@ -37,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             bookList.appendChild(listItem);
           }
         });
+
+        bookList.appendChild(fragment); // Append all items at once
       })
       .catch(error => console.error("Error fetching books:", error));
   });
