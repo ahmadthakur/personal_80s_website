@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrapbook</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/scrapbook.js" defer></script>
-  <!-- Add a favicon -->
-  <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books Club</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="js/books.js" defer></script>
+  <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon" />
 </head>
-<body class="scrapbook-body">
+<body>
   <div id="SITE_CONTAINER">
     <header>
       <nav id="nav-container-2">
@@ -25,15 +25,16 @@
         </ul>
       </nav>
     </header>
+    <main>
+      <section class="books">
+        <h1>Books I've Read This Year</h1>
+        <ul class="book-list" id="book-list">
+          <!-- Books will be dynamically added here -->
+        </ul>
+      </section>
+    </main>
+    <footer>
+    </footer>
   </div>
-  <div class="scrapbook-text">
-    <p class="about-me-p">Just a bunch of stuff that I like</p>
-  </div>
-  <div class="scrapbook">
-    <div class="scrapbook-grid" id="scrapbook-grid">
-      <!-- Scrapbook items will be dynamically added here -->
-    </div>
-  </div>
-  <footer></footer>
 </body>
 </html>
