@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scrapbook</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css">
   <script src="js/scrapbook.js" defer></script>
-
   <!-- Add a favicon -->
-  <link rel="icon" href="images/icons8-brain-48.png" type="image/x-icon" />
-
-  <!-- Preload important CSS file -->
-  <link rel="preload" href="css/styles.css" as="style" />
+  <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon">
 </head>
 <body class="scrapbook-body">
   <div id="SITE_CONTAINER">
@@ -33,64 +29,8 @@
     <p class="about-me-p">Just a bunch of stuff that I like</p>
   </div>
   <div class="scrapbook">
-    <div class="scrapbook-grid">
-      <a
-        href="https://open.spotify.com/album/7AJPV0L05IyIBid97AvwVD?si=4XaDpS9CT_aQgfVl-v6lTA"
-        target="_blank"
-        class="scrapbook-item"
-        ><img
-          src="https://images-na.ssl-images-amazon.com/images/I/71wiyaRhwPL._SL1500_.jpg"
-          alt="Description 1"
-          loading="lazy"
-      /></a>
-      <a
-        href="https://www.netflix.com/pk/title/81137509"
-        target="_blank"
-        class="scrapbook-item"
-        ><img
-          src="https://spice.eplus.jp/images/rAcGAbLnmuV3s22k3KHzjZvr8k8znmY678S3NFhuSHgNTQ58XISTx5Uh5aFuN0KZ"
-          alt="Description 2"
-          loading="lazy"
-      /></a>
-      <a
-        href="https://store.steampowered.com/app/502500/ACE_COMBAT_7_SKIES_UNKNOWN/"
-        target="_blank"
-        class="scrapbook-item"
-        ><img
-          src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/502500/header.jpg?t=1703657041"
-          alt="Description 3"
-          loading="lazy"
-      /></a>
-      <a
-        href="https://www.goodreads.com/book/show/57945316-babell"
-        target="_blank"
-        class="scrapbook-item"
-        ><img
-          src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1677361825i/57945316.jpg"
-          alt="Description 4"
-          loading="lazy"
-      /></a>
-
-      <!-- YouTube Video Placeholder -->
-      <iframe
-          width="320"
-          height="180"
-          src="https://www.youtube.com/embed/UvYcunuF3Eo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-
-      <a
-        href="https://www.viki.com/tv/38384c-why-i-dress-up-for-love"
-        target="_blank"
-        class="scrapbook-item"
-        ><img
-          src="https://1.vikiplatform.com/c/38384c/6d4b92b31b.jpg?x=b&a=0x0&s=1600x900&e=t&q=g"
-          alt="Description 5"
-          loading="lazy"
-      /></a>
+    <div class="scrapbook-grid" id="scrapbook-grid">
+      <!-- Scrapbook items will be dynamically added here -->
     </div>
   </div>
   <footer></footer>

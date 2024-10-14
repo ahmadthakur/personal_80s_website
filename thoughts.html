@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thoughts</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      defer
+    ></script>
+    <script src="js/thoughts.js" defer></script>
 
-     <!--add a favicon-->
-    <link rel="icon" href="images/icons8-brain-48.png" type="image/x-icon" />
+    <!--add a favicon-->
+    <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon" />
   </head>
   <body>
     <div id="SITE_CONTAINER">
@@ -30,41 +34,7 @@
           <!-- Articles will be dynamically added here -->
         </ul>
       </div>
-      <div id="article-content">
-        <!-- Article content will be displayed here -->
-      </div>
       <footer></footer>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Fetch articles from JSON file
-        fetch("articles.json")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
-          .then((articles) => {
-            const articleList = document.getElementById("article-list");
-
-            if (articles.length === 0) {
-              articleList.innerHTML = "<li>No articles available.</li>";
-              return;
-            }
-
-            articles.forEach((article) => {
-              const listItem = document.createElement("li");
-              const link = document.createElement("a");
-              link.href = `article-template.html?filename=${encodeURIComponent(article.filename)}`;
-              link.textContent = article.title;
-              listItem.appendChild(link);
-              articleList.appendChild(listItem);
-            });
-          })
-          .catch((error) => console.error("Error fetching articles:", error));
-      });
-    </script>
   </body>
 </html>

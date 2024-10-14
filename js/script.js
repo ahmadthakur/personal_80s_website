@@ -3,37 +3,37 @@
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
 );
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.getElementById("canvas"),
-    alpha: true,
+  canvas: document.getElementById("canvas"),
+  alpha: true,
 });
 
 function resizeCanvas() {
-    const canvas = renderer.domElement;
-    const aspectRatio = window.innerWidth / window.innerHeight;
+  const canvas = renderer.domElement;
+  const aspectRatio = window.innerWidth / window.innerHeight;
 
-    // Set the canvas size based on the aspect ratio
-    if (aspectRatio > 1) {
-        // Landscape mode
-        canvas.style.width = '80%';
-        canvas.style.height = '100vh';
-    } else {
-        // Portrait mode
-        canvas.style.width = '100%';
-        canvas.style.height = '100vh';
-    }
+  // Set the canvas size based on the aspect ratio
+  if (aspectRatio > 1) {
+    // Landscape mode
+    canvas.style.width = "80%";
+    canvas.style.height = "100vh";
+  } else {
+    // Portrait mode
+    canvas.style.width = "100%";
+    canvas.style.height = "100vh";
+  }
 
-    // Update the camera aspect ratio and renderer size
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    renderer.setSize(width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
+  // Update the camera aspect ratio and renderer size
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  renderer.setSize(width, height);
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
 }
 
 // Initial call to set up the canvas size
@@ -42,9 +42,14 @@ resizeCanvas();
 // Handle window resize
 window.addEventListener("resize", resizeCanvas);
 
-camera.position.set(0, 40, 50); // Set camera position slightly above the model
-camera.lookAt(0, 0, 0);
+camera.position.set(0, 30, 50); // Set camera position slightly above the model
 
+// If screen is smaller than 600px, move camera position
+if (window.innerWidth < 600) {
+  camera.position.set(0, 60, 100); // Set camera position slightly above the model
+}
+
+camera.lookAt(0, 0, 0);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
 scene.add(ambientLight);
@@ -59,32 +64,28 @@ const pointLight = new THREE.PointLight(0xffffff, 2, 100); // Increase point lig
 pointLight.position.set(0, 50, 50);
 scene.add(pointLight);
 
-
-
 // Load the GLB model
 const loader = new THREE.GLTFLoader();
 loader.load(
-    "images/low-poly_floating_island.glb", // Make sure to provide the correct path to your GLB file
-    (gltf) => {
-        
-        scene.add(gltf.scene);
-    },
-    undefined,
-    (error) => {
-        console.error(error);
-    }
+  "assets/low-poly_floating_island.glb", // Make sure to provide the correct path to your GLB file
+  (gltf) => {
+    scene.add(gltf.scene);
+  },
+  undefined,
+  (error) => {
+    console.error(error);
+  }
 );
 
 // Animation loop
 function animate() {
-    requestAnimationFrame(animate);
-    if (scene.children.length > 0) {
-        scene.rotation.y += 0.005; // Optional: Rotate the model
-    }
+  requestAnimationFrame(animate);
+  if (scene.children.length > 0) {
+    scene.rotation.y += 0.005; // Optional: Rotate the model
+  }
 
-    renderer.render(scene, camera);
+  renderer.render(scene, camera);
 }
 
 // Start the animation loop
 animate();
-
