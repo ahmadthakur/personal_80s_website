@@ -164,3 +164,50 @@ iframe {
 .article-list li{
   margin-bottom: 20px;
 }
+
+.books {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  
+}
+
+.books h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+
+}
+
+.book-list li:last-child {
+  border-bottom: none;
+}
+
+.book-list img {
+  margin-right: 20px;
+  width: 100px;
+  height: auto;
+}
+
+.book-list div {
+  flex: 1;
+}
+
+.book-list strong {
+  font-size: 1.2em;
+}
+
+.book-list em {
+  color: #666;
+}
