@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrapbook</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/scrapbook.js" defer></script>
-  <!-- Add a favicon -->
-  <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon">
-</head>
-<body class="scrapbook-body">
-  <div id="SITE_CONTAINER">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrapbook</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scrapbook.js" defer></script>
+    <!-- Add a favicon -->
+    <link rel="icon" href="assets/icons8-brain-48.png" type="image/x-icon" />
+  </head>
+  <style>
+    header {
+      max-width: 800px; /* Limit the width for better reading */
+      margin: 0 auto; /* Center the container */
+      padding: 20px;
+    }
+  </style>
+  <body class="scrapbook-body">
     <header>
       <nav id="nav-container-2">
         <ul>
@@ -20,20 +26,24 @@
           <li><a href="music.html">music</a></li>
           <li><a href="pictures.html">pictures</a></li>
           <li><a href="bookclub.html">book club</a></li>
-          <li><a href="https://www.youtube.com/@ahmad_thakur">youtube</a></li>
+          <li>
+            <a href="https://www.youtube.com/@ahmad_thakur" target="_blank"
+              >youtube</a
+            >
+          </li>
           <li><a href="scrapbook.html">scrapbook</a></li>
         </ul>
       </nav>
     </header>
-  </div>
-  <div class="scrapbook-text">
-    <p class="about-me-p">Just a bunch of stuff that I like</p>
-  </div>
-  <div class="scrapbook">
-    <div class="scrapbook-grid" id="scrapbook-grid">
-      <!-- Scrapbook items will be dynamically added here -->
+
+    <div class="scrapbook-text">
+      <p class="about-me-p">Just a bunch of stuff that I like</p>
     </div>
-  </div>
-  <footer></footer>
-</body>
+    <div class="scrapbook">
+      <div class="scrapbook-grid" id="scrapbook-grid">
+        <!-- Scrapbook items will be dynamically added here -->
+      </div>
+    </div>
+    <footer></footer>
+  </body>
 </html>
