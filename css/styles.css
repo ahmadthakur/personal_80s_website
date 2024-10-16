@@ -1,14 +1,8 @@
 body {
-  background-color: #ffffff; /* White background */ /* Dark text for contrast */
+  /* White background */ /* Dark text for contrast */
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.6; /* Spacing between lines for readability */
-}
-
-#SITE_CONTAINER {
-  max-width: 800px; /* Limit the width for better reading */
-  margin: 0 auto; /* Center the container */
-  padding: 20px; /* Padding around the content */
 }
 
 #HOME_CONTAINER {
@@ -41,10 +35,13 @@ footer {
 }
 
 .container {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: 1fr 200px; /* Two columns: one flexible, one fixed */
-  height: 100%; /* Full viewport height */
+  display: flex; /* Use CSS Grid */
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+  gap: 20px;
+  background-color: blueviolet;
 }
+
 .canvas-container {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -53,7 +50,31 @@ footer {
 .nav-container {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  margin-top: 200px;
+  border: 1px solid black;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+  padding: 20px;
+  background-color: #fff;
+  margin: 10em 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 0 20px;
+    background: none;
+  }
+  .canvas-container {
+    display: none;
+  }
+
+
+ 
+}
+
+#SITE_CONTAINER {
+  max-width: 800px; /* Limit the width for better reading */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding around the content */
 }
 
 #nav-container-2 {
@@ -136,8 +157,6 @@ footer {
   height: auto;
   display: block;
 }
-
-
 
 iframe {
   z-index: 1;
