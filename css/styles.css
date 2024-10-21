@@ -199,9 +199,12 @@ iframe {
   height: 100%;
 }
 
-.about-me-p {
-  color: #ffffff;
+.about-me p {
+  margin-bottom: 20px;
+
 }
+
+
 
 .article-content {
   margin-top: 100px;
@@ -216,7 +219,7 @@ iframe {
 
 .article-content p {
   margin-bottom: 20px;
- text-align: justify;
+ 
 }
 
 .article-list li {
